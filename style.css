@@ -83,3 +83,81 @@ body {
 .inputContainer button:active {
     transform: scale(0.9);
 }
+.todoContainer {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.todoList {
+    display: flex;
+    position: relative;
+    width: 95%;
+    padding-left: 40px;
+    font-size: 1.2rem;
+}
+.todoList input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+.checkmark {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.todoList:hover .checkmark {
+    background-color: #111;
+}
+.todoList input:checked ~ .checkmark {
+    background-color: #fff;
+}
+.checkmark::after {
+    display: none;
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.todoList input:checked ~ .checkmark::after {
+    display: block;
+}
+.todoText {
+    width: 100%;
+}
+.removeTodo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    cursor: pointer;
+}
+.removeTodo i {
+    color: #fff;
+}
+.removeTodo i:hover {
+    color: #999;
+}
