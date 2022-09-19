@@ -41,13 +41,24 @@ addButton.addEventListener('click', () => {
     checkbox.type = "checkbox";
     todoText.innerHTML = input.value;
 
-    container.appendChild(todoContainer);
-    todoContainer.appendChild(todoList);
-    todoContainer.appendChild(removeTodo);
-    todoList.appendChild(checkbox);
-    todoList.appendChild(checkmark);
-    todoList.appendChild(todoText);
-    removeTodo.appendChild(removeTodoIcon);
+    
+    if(input.value) {
+        if(input.value.length <= 35) {
+            container.appendChild(todoContainer);
+            todoContainer.appendChild(todoList);
+            todoContainer.appendChild(removeTodo);
+            todoList.appendChild(checkbox);
+            todoList.appendChild(checkmark);
+            todoList.appendChild(todoText);
+            removeTodo.appendChild(removeTodoIcon);
+        }
+        else {
+            alert("Maximum number of 35 characters");
+        }
+    }
+    else {
+        alert("Please enter a task");
+    }
 
     input.value = "";
 
@@ -69,5 +80,5 @@ addButton.addEventListener('click', () => {
         // This statement removes a list when clicked
         container.removeChild(todoContainer);
     });
-    
+
 });

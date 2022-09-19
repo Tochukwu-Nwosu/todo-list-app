@@ -147,6 +147,7 @@ body {
 }
 .todoText {
     width: 100%;
+    overflow: hidden;
 }
 .removeTodo {
     display: flex;
