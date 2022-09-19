@@ -43,7 +43,7 @@ addButton.addEventListener('click', () => {
 
     
     if(input.value) {
-        if(input.value.length <= 35) {
+        if(input.value.length <= 30) {
             container.appendChild(todoContainer);
             todoContainer.appendChild(todoList);
             todoContainer.appendChild(removeTodo);
@@ -53,7 +53,7 @@ addButton.addEventListener('click', () => {
             removeTodo.appendChild(removeTodoIcon);
         }
         else {
-            alert("Maximum number of 35 characters");
+            alert("Maximum number of 30 characters");
         }
     }
     else {

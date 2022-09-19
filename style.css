@@ -6,7 +6,7 @@
 }
 body {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
@@ -48,6 +48,7 @@ body {
 }
 .inputContainer {
     display: flex;
+    flex-wrap: wrap;
     margin: 40px 0;
     width: 100%;
 }
@@ -83,6 +84,8 @@ body {
 .inputContainer button:active {
     transform: scale(0.9);
 }
+
+/* to be implemented using JS*/
 .todoContainer {
     display: flex;
     width: 100%;
@@ -147,7 +150,8 @@ body {
 }
 .todoText {
     width: 100%;
-    overflow: hidden;
+    padding-right: 10px;
+    word-wrap: break-word;
 }
 .removeTodo {
     display: flex;
@@ -161,4 +165,29 @@ body {
 }
 .removeTodo i:hover {
     color: #999;
+}
+
+
+@media screen and (max-width: 550px) {
+    .inputContainer input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .todoText {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 360px) {
+    .dateContainer {
+        font-size: 1rem;
+    }
+    #date {
+        font-size: 2.5rem;
+    }
+    .todoText, .inputContainer input {
+        font-size: 0.9rem;
+    }
 }
