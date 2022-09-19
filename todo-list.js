@@ -19,6 +19,7 @@ const currentDate = () => {
 
 setInterval(currentDate, 0);
 
+addButton.innerHTML = "add";
 input.placeholder = "What do you want to do";
 
 addButton.addEventListener('click', () => {
@@ -49,4 +50,18 @@ addButton.addEventListener('click', () => {
     removeTodo.appendChild(removeTodoIcon);
 
     input.value = "";
+
+    checkbox.addEventListener('click', () => {
+        if(checkbox.checked) {
+            // These statements crosses a list when the checkbox is clicked
+            todoText.style.textDecoration = "line-through";
+            todoText.style.textDecorationColor = "#f00";
+            todoText.style.color = "#888";
+        }
+        else {
+            // These statements uncrosses a list when the checkbox is clicked
+            todoText.style.textDecoration = "none";
+            todoText.style.color = "#fff";
+        }
+    });
 });
