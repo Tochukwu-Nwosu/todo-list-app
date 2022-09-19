@@ -64,4 +64,10 @@ addButton.addEventListener('click', () => {
             todoText.style.color = "#fff";
         }
     });
+
+    removeTodo.addEventListener('click', () => {
+        // This statement removes a list when clicked
+        container.removeChild(todoContainer);
+    });
+    
 });
