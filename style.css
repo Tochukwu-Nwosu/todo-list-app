@@ -64,10 +64,6 @@ body {
     text-align: center;
     outline: none;
 }
-.inputContainer input:focus {
-    /* outline: 1px solid #ccc; */
-    /* -moz-outline-radius: 10px; */
-}
 .inputContainer button {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -85,10 +81,6 @@ body {
 }
 .inputContainer button:active {
     transform: scale(0.9);
-}
-.inputContainer button:focus {
-    /* outline: 1px solid #ccc; */
-    /* -moz-outline-radius: 5px; */
 }
 
 /* to be implemented using JS*/
