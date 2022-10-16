@@ -59,18 +59,17 @@ body {
     border: 1px solid #ccc;
     background-color: #000;
     color: #fff;
-    outline: none;
     border-radius: 10px;
     font-size: 1.2rem;
     text-align: center;
+    outline: none;
 }
 .inputContainer input:focus {
-    outline: 1px solid #ccc;
-    -moz-outline-radius: 10px;
+    /* outline: 1px solid #ccc; */
+    /* -moz-outline-radius: 10px; */
 }
 .inputContainer button {
     border: 1px solid #ccc;
-    outline: none;
     border-radius: 5px;
     padding: 10px 16px;
     background-color: #000;
@@ -79,6 +78,7 @@ body {
     text-transform: capitalize;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    outline: none;
 }
 .inputContainer button:hover {
     transform: scale(1.1);
@@ -87,8 +87,8 @@ body {
     transform: scale(0.9);
 }
 .inputContainer button:focus {
-    outline: 1px solid #ccc;
-    -moz-outline-radius: 5px;
+    /* outline: 1px solid #ccc; */
+    /* -moz-outline-radius: 5px; */
 }
 
 /* to be implemented using JS*/
