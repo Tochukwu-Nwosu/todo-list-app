@@ -66,6 +66,7 @@ body {
 }
 .inputContainer input:focus {
     outline: 1px solid #ccc;
+    -moz-outline-radius: 10px;
 }
 .inputContainer button {
     border: 1px solid #ccc;
@@ -77,12 +78,17 @@ body {
     text-transform: capitalize;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    outline: none;
 }
 .inputContainer button:hover {
     transform: scale(1.1);
 }
 .inputContainer button:active {
     transform: scale(0.9);
+}
+.inputContainer button:focus {
+    outline: 1px solid #ccc;
+    -moz-outline-radius: 5px;
 }
 
 /* to be implemented using JS*/
