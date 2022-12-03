@@ -17,12 +17,10 @@ const currentDate = () => {
     day.innerHTML = days[now.getDay()]
 }
 
-setInterval(currentDate, 0);
+setInterval(currentDate, 0); // This runs the date
 
-addButton.innerHTML = "add";
-input.placeholder = "What do you want to do";
-
-addButton.addEventListener('click', () => {
+const createList = () => {
+    // These statements creates the elements
     let todoContainer = document.createElement("div");
     let todoList = document.createElement("span");
     let checkbox = document.createElement("input");
@@ -31,6 +29,10 @@ addButton.addEventListener('click', () => {
     let removeTodo = document.createElement("span");
     let removeTodoIcon = document.createElement("i");
 
+    checkbox.type = "checkbox";
+    todoText.innerHTML = input.value;
+
+    // These statements styles the elements
     todoContainer.className = "todoContainer";
     todoList.className = "todoList";
     checkmark.className = "checkmark";
@@ -38,10 +40,7 @@ addButton.addEventListener('click', () => {
     removeTodo.className = "removeTodo";
     removeTodoIcon.classList = "fa-solid fa-xmark";
 
-    checkbox.type = "checkbox";
-    todoText.innerHTML = input.value;
-
-    
+    // This validates the input value & appends the list
     if(input.value) {
         if(input.value.length <= 30) {
             container.appendChild(todoContainer);
@@ -60,7 +59,7 @@ addButton.addEventListener('click', () => {
         alert("Please enter a task");
     }
 
-    input.value = "";
+    input.value = "";  // This clears the input value after creating a list
 
     checkbox.addEventListener('click', () => {
         if(checkbox.checked) {
@@ -81,68 +80,11 @@ addButton.addEventListener('click', () => {
         container.removeChild(todoContainer);
     });
 
-});
+}
 
-// input keypress: tidy this code
+addButton.addEventListener('click', createList);
+
 input.addEventListener('keypress', (key) => {
-    if(key.keyCode === 13) {
-        let todoContainer = document.createElement("div");
-        let todoList = document.createElement("span");
-        let checkbox = document.createElement("input");
-        let checkmark = document.createElement("span");
-        let todoText = document.createElement("p");
-        let removeTodo = document.createElement("span");
-        let removeTodoIcon = document.createElement("i");
-    
-        todoContainer.className = "todoContainer";
-        todoList.className = "todoList";
-        checkmark.className = "checkmark";
-        todoText.className = "todoText";
-        removeTodo.className = "removeTodo";
-        removeTodoIcon.classList = "fa-solid fa-xmark";
-    
-        checkbox.type = "checkbox";
-        todoText.innerHTML = input.value;
-    
-        
-        if(input.value) {
-            if(input.value.length <= 30) {
-                container.appendChild(todoContainer);
-                todoContainer.appendChild(todoList);
-                todoContainer.appendChild(removeTodo);
-                todoList.appendChild(checkbox);
-                todoList.appendChild(checkmark);
-                todoList.appendChild(todoText);
-                removeTodo.appendChild(removeTodoIcon);
-            }
-            else {
-                alert("Maximum number of 30 characters");
-            }
-        }
-        else {
-            alert("Please enter a task");
-        }
-    
-        input.value = "";
-    
-        checkbox.addEventListener('click', () => {
-            if(checkbox.checked) {
-                // These statements crosses a list when the checkbox is clicked
-                todoText.style.textDecoration = "line-through";
-                todoText.style.textDecorationColor = "#f00";
-                todoText.style.color = "#888";
-            }
-            else {
-                // These statements uncrosses a list when the checkbox is clicked
-                todoText.style.textDecoration = "none";
-                todoText.style.color = "#fff";
-            }
-        });
-    
-        removeTodo.addEventListener('click', () => {
-            // This statement removes a list when clicked
-            container.removeChild(todoContainer);
-        });
-    
-    }
+    // This is executed when the user presses the 'Enter' key
+    if(key.keyCode === 13) return createList();
 })
