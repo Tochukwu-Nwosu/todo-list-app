@@ -41,7 +41,7 @@ const createList = () => {
     removeTodoIcon.classList = "fa-solid fa-xmark";
 
     // This validates the input value & appends the list
-    if(input.value) {
+    if(input.value.trim() !== "") {
         if(input.value.length <= 30) {
             container.appendChild(todoContainer);
             todoContainer.appendChild(todoList);
